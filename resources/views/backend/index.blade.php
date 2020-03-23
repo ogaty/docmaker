@@ -8,7 +8,7 @@
                 <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white mr-2">
                   <i class="mdi mdi-home"></i>
-                </span> Dashboard </h3>
+                </span> Documents </h3>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">
@@ -31,6 +31,11 @@
         <!-- partial -->
     </div>
 
+    <script>
+        window.backend = {
+            documents: {!! json_encode($documents, JSON_HEX_QUOT) !!}
+        }
+    </script>
     <script src="{{ mix('js/app.js') }}" ></script>
 @endsection
 

@@ -4,6 +4,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">DOCMAKER</h4>
+                    <ul>
+                        <li v-for="item in documents">
+                            {{ item.id }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -44,7 +49,8 @@
         },
 
         data: () => ({
-            email: 'test@example.com'
+            email: window.email,
+            documents: window.backend.documents
         }),
     }
 </script>

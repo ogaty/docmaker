@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('frontend/index');
 });
 
-Route::get('/adm', function () {
-    return view('backend/index');
-})->name('admin.index');
+Route::group([
+    'middleware' => ['auth'],
+    'namespace' => 'BackEnd',
+], function () {
+    Route::get('/adm', 'DocumentsController@index')->name('admin.index');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
