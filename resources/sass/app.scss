@@ -1,17 +1,116 @@
-//
-body {
-    margin: 0;
-}
-.header {
-    position: fixed;
-    height: 60px;
-    width: 100%;
-    top: 0;
-    background: #636b6f;
-    box-sizing: border-box;
-}
-.title {
-    margin: 16px 0 0 20px;
-    font-size: 1.4em;
-    color: #efefef;
-}
+/*-------------------------------------------------------------------
+  ===== Table of Contents =====
+
+  * Bootstrap functions
+  * Template variables
+  * SCSS Compass Functions
+  * Boostrap Main SCSS
+  * Template mixins
+    + Animation Mixins
+    + Background Mixins
+    + Badge Mixins
+    + Button Mixins
+    + Miscellaneous Mixins
+    + BlockQuote Mixins
+    + Cards Mixins
+    + Color Functions Mixins
+    + Tooltips
+    + popovers
+  * Core Styles
+    + Reset Styles
+    + Fonts
+    + Functions
+    + Backgrounds
+    + Typography
+    + Miscellaneous
+    + Footer
+    + Layouts
+    + Utilities
+    + Demo styles
+  * Components
+    + Badges
+    + Boostrap Progress
+    + Buttons
+    + Breadcrumbs
+    + Cards
+    + Checkboxes and Radios
+    + Dropdowns
+    + Forms
+    + Icons
+    + Preview
+    + Tables
+    + Todo List
+  * Landing screens
+    + Auth
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------*/
+/* === Import Bootstrap functions and variables === */
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+/*-------------------------------------------------------------------*/
+/* === Import template variables === */
+@import './scss/variables';
+
+/*-------------------------------------------------------------------*/
+/* === SCSS Compass Functions === */
+@import "../../node_modules/compass-mixins/lib/compass";
+@import "../../node_modules/compass-mixins/lib/animate";
+
+/*-------------------------------------------------------------------*/
+/* === Boostrap Main SCSS === */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*-------------------------------------------------------------------*/
+/* === Template mixins === */
+@import "./scss/mixins/misc";
+@import "./scss/mixins/animation";
+@import "./scss/mixins/background";
+@import "./scss/mixins/badges";
+@import "./scss/mixins/blockqoute";
+@import "./scss/mixins/buttons";
+@import "./scss/mixins/breadcrumbs";
+@import "./scss/mixins/cards";
+@import "./scss/mixins/pagination";
+@import "./scss/mixins/popovers";
+@import "./scss/mixins/tooltips";
+@import "./scss/mixins/text";
+
+/*-------------------------------------------------------------------*/
+/* === Core Styles === */
+@import "./scss/reset";
+@import "./scss/fonts";
+@import "./scss/functions";
+@import "./scss/typography";
+@import "./scss/misc";
+@import "./scss/footer";
+@import "./scss/utilities";
+@import "./scss/demo";
+@import "./scss/dashboard";
+
+/*-------------------------------------------------------------------*/
+/* === Components === */
+@import "./scss/components/badges";
+@import "./scss/components/bootstrap-progress";
+@import "./scss/components/buttons";
+@import "./scss/components/breadcrumbs";
+@import "./scss/components/cards";
+@import "./scss/components/checkbox-radio";
+@import "./scss/components/dropdown";
+@import "./scss/components/forms";
+@import "./scss/components/icons";
+@import "./scss/components/lists";
+@import "./scss/components/preview";
+@import "./scss/components/tables";
+@import "./scss/components/todo-list";
+
+/*-------------------------------------------------------------------*/
+/* === Landing screens === */
+@import "./scss/landing-screens/auth";
+
+
+@import './scss/navbar';
+@import './scss/sidebar';
+@import './scss/layouts';
+@import './scss/vertical-wrapper';

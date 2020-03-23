@@ -20,6 +20,12 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "bootstrap": "^4.4.1",
+        "compass-mixins": "^0.12.10",
+        "fibers": "^4.0.2",
+        "jquery": "^3.4.1",
+        "node-sass": "^4.13.1",
+        "popper": "^1.0.1",
         "vue": "^2.6.11"
     }
 }

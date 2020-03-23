@@ -5,6 +5,9 @@
                 <div class="title">
                     DOCMAKER
                 </div>
+                <div class="user">
+                    <span class="email">{{ email }}</span>
+                </div>
             </div>
         </header>
         <div class="row justify-content-center">
@@ -26,6 +29,10 @@
 
         mounted() {
             console.log('Component mounted.')
-        }
+        },
+
+        data: () => ({
+            email: 'test@example.com'
+        }),
     }
 </script>
