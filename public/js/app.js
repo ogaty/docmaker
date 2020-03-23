@@ -1934,6 +1934,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -19579,38 +19591,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("header", [
-      _c("div", { staticClass: "header" }, [
-        _c("div", { staticClass: "title" }, [
-          _vm._v("\n                DOCMAKER\n            ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "user" }, [
-          _c("span", { staticClass: "email" }, [_vm._v(_vm._s(_vm.email))])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(0)
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 grid-margin" }, [
+        _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I'm an backend component.\n                "
-            )
+            _c("h4", { staticClass: "card-title" }, [_vm._v("DOCMAKER")])
           ])
         ])
       ])
