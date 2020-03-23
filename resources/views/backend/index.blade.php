@@ -18,6 +18,20 @@
                 </nav>
             </div>
 
+            @if(Session::has('message'))
+            <div class="row" id="sessionMessage">
+                <div class="col-12">
+                <span class="d-flex align-items-center purchase-popup">
+                  <p>
+                       {{ Session::get('message') }}
+                      {{ Session::forget('message') }}
+                  </p>
+                  <i class="mdi mdi-close" id="bannerClose"></i>
+                </span>
+                </div>
+            </div>
+            @endif
+
             <backend-component></backend-component>
         </div>
         <!-- content-wrapper ends -->
@@ -34,7 +48,14 @@
     <script>
         window.backend = {
             documents: {!! json_encode($documents, JSON_HEX_QUOT) !!}
-        }
+        };
+
+        $(function() {
+            $('#bannerClose').on('click',function() {
+                $('#sessionMessage').addClass('d-none');
+            });
+        });
+
     </script>
     <script src="{{ mix('js/app.js') }}" ></script>
 @endsection

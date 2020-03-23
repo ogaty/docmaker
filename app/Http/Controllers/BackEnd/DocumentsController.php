@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Document;
+use Illuminate\Support\Facades\Session;
 
 class DocumentsController extends Controller
 {
@@ -13,10 +14,21 @@ class DocumentsController extends Controller
     {
         $documents = Document::all();
 
-
         return view('backend.index', [
             'email' => Auth::user()->email,
             'documents' => $documents->toArray(),
         ]);
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function delete(Request $request)
+    {
+        Document::destroy($request->id);
+
+        return redirect(route('admin.index'))->with('message', 'Delete Success.');
     }
 }

@@ -1951,6 +1951,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -1959,6 +1977,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       email: window.email,
       documents: window.backend.documents
+    };
+  },
+  functions: function functions() {
+    return {
+      deleteUrl: function deleteUrl($id) {
+        return '/adm/document/delete/' + $id;
+      }
     };
   }
 });
@@ -37375,24 +37400,66 @@ var render = function() {
           _c("h4", { staticClass: "card-title" }, [_vm._v("DOCMAKER")]),
           _vm._v(" "),
           _c(
-            "ul",
-            _vm._l(_vm.documents, function(item) {
-              return _c("li", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(item.id) +
-                    "\n                    "
-                )
-              ])
-            }),
-            0
+            "table",
+            { staticClass: "table" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._l(_vm.documents, function(item) {
+                return _c("tr", { key: item.id }, [
+                  _c("td", [_vm._v(_vm._s(item.id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.document_name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.document_title))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.document_version))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._m(1, true),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { attrs: { href: "/adm/document/delete/" + item.id } },
+                      [_c("i", { staticClass: "fas fa-trash" })]
+                    )
+                  ])
+                ])
+              })
+            ],
+            2
           )
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("ID")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("名前")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("タイトル")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("バージョン")]),
+      _vm._v(" "),
+      _c("td")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/adm/document/edit" } }, [
+      _c("i", { staticClass: "fas fa-edit" })
+    ])
+  }
+]
 render._withStripped = true
 
 
