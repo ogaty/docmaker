@@ -24,7 +24,7 @@ Route::group([
     'namespace' => 'BackEnd',
 ], function () {
     Route::get('/adm', 'DocumentsController@index')->name('admin.index');
-    Route::get('/adm/document/edit', 'DocumentsController@edit')->name('admin.document.edit');
+    Route::get('/adm/document/edit/{id}', 'DocumentsController@edit')->name('admin.document.edit');
     Route::get('/adm/document/delete/{id}', 'DocumentsController@delete')->name('admin.document.delete');
 });
 

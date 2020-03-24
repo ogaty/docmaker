@@ -20,9 +20,14 @@ class DocumentsController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $document = Document::find($id);
 
+        return view('backend.edit', [
+            'email' => Auth::user()->email,
+            'document' => $document->toArray(),
+        ]);
     }
 
     public function delete(Request $request)

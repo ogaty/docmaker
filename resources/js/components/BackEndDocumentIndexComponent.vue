@@ -18,7 +18,7 @@
                             <td>{{ item.document_title }}</td>
                             <td>{{ item.document_version }}</td>
                             <td>
-                                <a href="/adm/document/edit">
+                                <a v-bind:href="'/adm/document/edit/' + item.id">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a v-bind:href="'/adm/document/delete/' + item.id">
@@ -31,32 +31,6 @@
             </div>
         </div>
     </div>
-
-    <!--
-    <div class="container">
-        <header>
-            <div class="header">
-                <div class="title">
-                    DOCMAKER
-                </div>
-                <div class="user">
-                    <span class="email">{{ email }}</span>
-                </div>
-            </div>
-        </header>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an backend component.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
 </template>
 
 <script>
