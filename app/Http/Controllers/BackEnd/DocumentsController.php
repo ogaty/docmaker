@@ -20,6 +20,18 @@ class DocumentsController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $document = Document::find($id);
+        $items = $document->items;
+
+        return view('backend.show', [
+            'email' => Auth::user()->email,
+            'document' => $document->toArray(),
+            'items' => $items->toArray(),
+        ]);
+    }
+
     public function edit($id)
     {
         $document = Document::find($id);

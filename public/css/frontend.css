@@ -1,0 +1,38 @@
+body {
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar a, #sidebar a:hover {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}

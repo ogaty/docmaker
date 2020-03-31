@@ -3,25 +3,22 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">DOCMAKER</h4>
+                    <h4 class="card-title">{{ document.document_title }}</h4>
+                    <button v-on:click="add(document.id)">ADD</button>
                     <table class="table">
                         <tr>
                             <td>ID</td>
-                            <td>名前</td>
                             <td>タイトル</td>
-                            <td>バージョン</td>
                             <td></td>
                         </tr>
-                        <tr v-for="item in documents" v-bind:key="item.id">
+                        <tr v-for="item in items">
                             <td>{{ item.id }}</td>
-                            <td><a v-bind:href="'/adm/document/' + item.id">{{ item.document_name }}</a></td>
-                            <td>{{ item.document_title }}</td>
-                            <td>{{ item.document_version }}</td>
+                            <td>{{ item.title }}</td>
                             <td>
-                                <a v-bind:href="'/adm/document/edit/' + item.id">
+                                <a v-bind:href="'/adm/document/' + item.id + '/edit'">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a v-bind:href="'/adm/document/delete/' + item.id">
+                                <a v-bind:href="'/adm/document/' + item.id + '/delete'">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
@@ -42,13 +39,14 @@
 
         data: () => ({
             email: window.email,
-            documents: window.backend.documents
+            document: window.backend.document,
+            items: window.backend.items
         }),
 
         methods: {
-            deleteUrl: (id) => {
-                return '/adm/document/delete/' + id
+            add: (id) => {
+                location.href='/adm/item/' + id + '/add'
             }
-        },
+        }
     }
 </script>
