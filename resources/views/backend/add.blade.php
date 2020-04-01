@@ -8,7 +8,7 @@
                 <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white mr-2">
                   <i class="mdi mdi-home"></i>
-                </span> Document Edit </h3>
+                </span> Document Add </h3>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">
@@ -18,7 +18,7 @@
                 </nav>
             </div>
 
-            <backend-document-edit-component></backend-document-edit-component>
+            <backend-document-add-component></backend-document-add-component>
 
             @include('backend._footer')
             <!-- partial -->
@@ -26,8 +26,7 @@
 
         <script>
             window.backend = {
-                csrf: '{!! csrf_token() !!}',
-                document: {!! json_encode($document, JSON_HEX_QUOT) !!}
+                csrf: '{!! csrf_token() !!}'
             };
 
             $(function() {

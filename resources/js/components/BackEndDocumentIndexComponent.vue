@@ -3,7 +3,8 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">DOCMAKER</h4>
+                    <h4 class="card-title">Documents</h4>
+                    <button v-on:click="add()">ADD</button>
                     <table class="table">
                         <tr>
                             <td>ID</td>
@@ -21,7 +22,7 @@
                                 <a v-bind:href="'/adm/document/edit/' + item.id">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a v-bind:href="'/adm/document/delete/' + item.id">
+                                <a v-bind:href="deleteUrl(item.id)">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
@@ -37,7 +38,6 @@
     export default {
 
         mounted() {
-            console.log('Component mounted.')
         },
 
         data: () => ({
@@ -48,6 +48,10 @@
         methods: {
             deleteUrl: (id) => {
                 return '/adm/document/delete/' + id
+            },
+
+            add: () => {
+                location.href='/adm/document/add'
             }
         },
     }

@@ -32,6 +32,25 @@ class DocumentsController extends Controller
         ]);
     }
 
+    public function add()
+    {
+        return view('backend.add', [
+            'email' => Auth::user()->email,
+        ]);
+    }
+
+    public function complete(Request $request)
+    {
+        $data = $request->post() + [
+            'user_id' => Auth::user()->id,
+            ];
+        $document = new Document();
+        $document->fill($data);
+        $document->save();
+
+        return redirect(route('admin.index'))->with('message', 'Add Success');
+    }
+
     public function edit($id)
     {
         $document = Document::find($id);
@@ -40,6 +59,15 @@ class DocumentsController extends Controller
             'email' => Auth::user()->email,
             'document' => $document->toArray(),
         ]);
+    }
+
+    public function edit_complete($id, Request $request)
+    {
+        $document = Document::find($id);
+        $document->fill($request->post());
+        $document->save();
+
+        return redirect(route('admin.index'))->with('message', 'Edit Success');
     }
 
     public function delete(Request $request)

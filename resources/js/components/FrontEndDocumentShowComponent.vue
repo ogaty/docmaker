@@ -1,17 +1,18 @@
 <template>
     <div class="wrapper">
         <nav id="sidebar">
+            <h1>{{ mydocument.document_title }}</h1>
             <ul class="list-unstyled components">
                 <li v-for="item in items">
-                    <a href="#">{{ item.title }}</a>
+                    <a v-bind:href="'#' + item.id">{{ item.title }}</a>
                 </li>
 
             </ul>
         </nav>
         <div id="content">
-            <h1>{{ document.title }}</h1>
+            <h1>{{ mydocument.document_title }}</h1>
             <section v-for="item in items">
-                <h2>
+                <h2 v-bind:id="item.id">
                     {{ item.title }}
                 </h2>
                 <div>
@@ -20,7 +21,7 @@
             </section>
             <footer>
                 <div>
-                    (c) 2020.
+                    (c) 2020. {{ mydocument.copyright }}
                 </div>
             </footer>
         </div>
@@ -35,7 +36,7 @@
         },
 
         data: () => ({
-            'document' : window.frontend.document,
+            'mydocument' : window.frontend.document,
             'items': window.frontend.items,
         })
     }
