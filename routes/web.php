@@ -36,6 +36,12 @@ Route::group([
     Route::post('/adm/item/{document_id}/complete', 'DocumentItemsController@complete')->name('admin.documentitem.complete');
     Route::get('/adm/item/{document_id}/{item_id}/edit', 'DocumentItemsController@edit')->name('admin.documentitem.edit');
     Route::get('/adm/item/{document_id}/{item_id}/delete', 'DocumentItemsController@edit')->name('admin.documentitem.edit');
+    Route::get('/adm/user', 'UsersController@index')->name('admin.user.index');
+    Route::get('/adm/user/add', 'UsersController@add')->name('admin.user.add');
+    Route::post('/adm/user/complete', 'UsersController@complete')->name('admin.user.complete');
+    Route::get('/adm/user/edit/{id}', 'UsersController@edit')->name('admin.user.edit');
+    Route::post('/adm/user/{id}/edit_complete', 'UsersController@complete')->name('admin.user.edit_complete');
+    Route::get('/adm/user/delete/{id}', 'UsersController@delete')->name('admin.user.delete');
 });
 
 Route::group([
